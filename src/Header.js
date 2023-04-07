@@ -27,6 +27,14 @@ Router.propTypes = {
 };
 
 function Header(){
+  function handleScroll() {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0, 
+      behavior: 'smooth',
+    });
+}
+
 	return(
 		<>
 			<AppBar position="static" height="64px">
@@ -60,7 +68,7 @@ function Header(){
 								Home
 							</Typography>
 						</Button>
-						<Button component={RouterLink} to="/about" color="neutral" sx={{flexGrow : 0, mr:2,  display:{xs:'none', sm:'inline-flex'}}}>
+						<Button onClick={handleScroll} color="neutral" sx={{flexGrow : 0, mr:2,  display:{xs:'none', sm:'inline-flex'}}}>
 							<Typography variant="h3">
 								About
 							</Typography>

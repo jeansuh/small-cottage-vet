@@ -18,14 +18,23 @@ import {
 	 MemoryRouter,
 } from 'react-router-dom';
 import Logo from './img/logo.png';
-
+import Staff1 from './img/staff1.png';
+import Staff2 from './img/staff2.jpg';
+import Staff3 from './img/staff3.jpg';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 
 
 function Home(){
-	const aboutRef = React.useRef();
-	const onClick = () => {
-		aboutRef.current.scrollIntoView();
-	}
+
+	function handleScroll() {
+	    window.scroll({
+	      top: document.body.offsetHeight,
+	      left: 0, 
+	      behavior: 'smooth',
+	    });
+	  }
+
 
 	return(
 		<>	
@@ -78,7 +87,8 @@ function Home(){
 			<Container disableGutters 
 				sx={{
 					width:'100%',
-					my:{xs:'400px', md:'50px'}, 
+					mt:{xs:'400px', md:'50px'}, 
+					mb:{xs:'100px',md:'50px'},
 					display:'inline-flex', 
 					flexDirection:{xs:'column', sm:'column', md:'row'}, 
 					justifyContent:'space-around',
@@ -103,7 +113,7 @@ function Home(){
 				</Card>
 				<Card
 					component={RouterLink}
-					onClick={onClick}
+					onClick={handleScroll}
 					sx={{
 						width:300, 
 						borderRadius:'50%',
@@ -139,17 +149,17 @@ function Home(){
 			</Container>
 			<Container disableGutters
 				maxWidth={false}
-				ref={aboutRef}
 				sx={{
 					width:'100%',
-					height:{xs:'500px',sm:'450px'},
+					height:{xs:'1050px',sm:'900px', md:'500px'},
 					backgroundColor:'#FFEBEE',
 					display:'flex',
 					alignItems:'center',
 					justifyContent:'center',
+					flexDirection:{xs : 'column',sm:'column', md:'row'}
 				}}>
 				<Box>
-					<Box sx={{m:10, display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',}}>
+					<Box sx={{m:5, display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',}}>
 						<Box sx={{
 							height:'300px',
 							width:'450px',
@@ -176,33 +186,106 @@ function Home(){
 						About us
 					</Typography>
 					<Typography variant='h3' align='left'>
-						At the Animal Kingdom Veterinary Clinic, we believe that every pet deserves compassionate and comprehensive care. Our team of skilled veterinarians and staff are dedicated to providing personalized and high-quality care for all types of animals, from cats and dogs to exotic pets and farm animals. <br /><br />We offer a wide range of services, from preventative care and routine check-ups to specialized treatments and emergency services. Our state-of-the-art facility is equipped with the latest technology to ensure accurate diagnoses and effective treatments for all of our patients. Whether you're bringing in your beloved companion or a barnyard friend, we are committed to providing the best possible care to help them lead happy and healthy lives.
+						At Small Cottage Veterinary, we believe that every pet deserves compassionate and comprehensive care. Our team of skilled veterinarians and staff are dedicated to providing personalized and high-quality care for all types of animals, from cats and dogs to exotic pets and farm animals. <br /><br />We offer a wide range of services, from preventative care and routine check-ups to specialized treatments and emergency services. Our state-of-the-art facility is equipped with the latest technology to ensure accurate diagnoses and effective treatments for all of our patients. Whether you're bringing in your beloved companion or a barnyard friend, we are committed to providing the best possible care to help them lead happy and healthy lives.
 					</Typography>
 				</Box>
 			</Container>
 			<Container disableGutters
 				maxWidth={false}
-				ref={aboutRef}
 				sx={{
 					width:'100%',
-					height:'500px',
+					height:{sm:'1800px',md:'900px'},
 					backgroundColor:'#FFF3E0',
 					display:'flex',
-					flexDirection:'column'
-					,justifyContent:'center'
-					,alignItems:'center'
+					flexDirection:'column',
+					justifyContent:'center',
+					alignItems:'center',
+					pb:10
 				}}>
 				<Box 
 					sx={{
-						p:10,
+						p:3,
 					}}>
 					<Typography variant = "h6">
 					Meet our Staff
 					</Typography>
 				</Box>
-				<Box>
-					<Card>
-						asd
+				<Box 
+					sx={{
+						display:'flex',
+						flexDirection:{xs:'column',sm:'column',md:'row'}
+					}}>
+					<Card sx={{
+						height:'600px',
+						width: '300px',
+						m:2
+					}}>
+						<CardMedia sx={{
+							height:'72%',
+						}}
+						image={Staff1}>
+						</CardMedia>
+						<CardContent align='left'>
+							<Typography variant = "h2">
+								Mateo, DVM
+							</Typography>
+							<Typography variant = "h3" sx={{my:1}}>
+								Experience : 8 Years<br />
+								Alma mater : UC Davis<br />
+								Specialization : Household pets
+							</Typography>
+						</CardContent>
+						<CardActions sx={{my:-2, mx:0}}>
+							<Box sx={{flexGrow:1}} /><Button size="small" color='secondary' component={RouterLink} to="https://www.petfinder.com/dog/mateo-60524776/ny/new-york/love-of-all-dogs-pr38/">Link</Button>
+						</CardActions>
+					</Card>
+					<Card sx={{
+						height:'600px',
+						width: '300px',
+						m:2,
+					}}>
+						<CardMedia sx={{
+							height:'72%',
+						}}
+						image={Staff2}>
+						</CardMedia>
+						<CardContent align='left'>
+							<Typography variant = "h2">
+								Winnifred, DVM
+							</Typography>
+							<Typography variant = "h3" sx={{my:1}}>
+								Experience : 8 Years<br />
+								Alma mater : University of London<br />
+								Specialization : Reptiles and insects
+							</Typography>
+						</CardContent>
+						<CardActions sx={{my:-2, mx:0}}>
+							<Box sx={{flexGrow:1}} /><Button component={RouterLink} to="https://www.petfinder.com/dog/winnifred-61702966/ny/new-york/aspca-ny29/" size="small" color='secondary'>Link</Button>
+						</CardActions>
+					</Card>
+					<Card sx={{
+						height:'600px',
+						width: '300px',
+						m:2
+					}}>
+						<CardMedia sx={{
+							height:'72%',
+						}}
+						image={Staff3}>
+						</CardMedia>
+						<CardContent align='left'>
+							<Typography variant = "h2">
+								Sani, DVM
+							</Typography>
+							<Typography variant = "h3" sx={{my:1}}>
+								Experience : 2 Years<br />
+								Alma mater : Cornell University Ithaca<br />
+								Specialization : Farm Animals
+							</Typography>
+						</CardContent>
+						<CardActions sx={{my:-2, mx:0}}>
+							<Box sx={{flexGrow:1}} /><Button size="small" color='secondary' component={RouterLink} to="https://www.petfinder.com/dog/mateo-60524776/ny/new-york/love-of-all-dogs-pr38/">Link</Button>
+						</CardActions>
 					</Card>
 				</Box>
 			</Container>
