@@ -87,8 +87,8 @@ function Home(){
 			<Container disableGutters 
 				sx={{
 					width:'100%',
-					mt:{xs:'400px', md:'50px'}, 
-					mb:{xs:'100px',md:'50px'},
+					mt:{xs:'400px', md:'100px'}, 
+					mb:{xs:'100px',md:'50x'},
 					display:'inline-flex', 
 					flexDirection:{xs:'column', sm:'column', md:'row'}, 
 					justifyContent:'space-around',
@@ -119,7 +119,8 @@ function Home(){
 						borderRadius:'50%',
 						display:'flex',
 						justifyContent:'center',
-						alignItems:'center'
+						alignItems:'center',
+						my:'50px',
 					}}>
 					<Typography variant='h5' sx={{position:'absolute',}}>
 						Meet the Staff
@@ -136,7 +137,8 @@ function Home(){
 						borderRadius:'50%',
 						display:'flex',
 						justifyContent:'center',
-						alignItems:'center'
+						alignItems:'center',
+						my:'50px',
 					}}>
 					<Typography variant='h5' sx={{position:'absolute',}}>
 						Make an Appointment
@@ -156,22 +158,22 @@ function Home(){
 					display:'flex',
 					alignItems:'center',
 					justifyContent:'center',
-					flexDirection:{xs : 'column',sm:'column', md:'row'}
+					flexDirection:{xs : 'column',sm:'column', md:'row'},
 				}}>
-				<Box>
+				<Box sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
 					<Box sx={{m:5, display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',}}>
 						<Box sx={{
 							height:'300px',
-							width:'450px',
+							width:{xs:'300px',sm:'450px'},
 						}}>
 							<Box component='img' 
 								sx={{
 									display:'flex',
 									overflow: 'hidden',
 									height: '100%',
-									width: '100%',
+									width:'100%',
 									objectFit: 'cover',
-									flexGrow:1,
+									flexGrow:{xs:0,sm:0,md:1},
 									borderRadius:'2%'
 									}}
 									src={AboutImage} />
@@ -194,13 +196,13 @@ function Home(){
 				maxWidth={false}
 				sx={{
 					width:'100%',
-					height:{sm:'1800px',md:'900px'},
+					height:{sm:'2200px',md:'900px'},
 					backgroundColor:'#FFF3E0',
 					display:'flex',
 					flexDirection:'column',
 					justifyContent:'center',
 					alignItems:'center',
-					pb:10
+					p:10
 				}}>
 				<Box 
 					sx={{
