@@ -46,6 +46,12 @@ const theme = createTheme({
       fontWeight: 900,
       fontStyle: 'Bold',
     },
+    h6: {
+      fontFamily: 'Caveat',
+      fontSize: "2.5rem",
+      fontWeight: 900,
+      fontStyle: 'Bold',
+    }
   }
 });
 
