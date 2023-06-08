@@ -58,7 +58,7 @@ function Home(){
 							justifyContent: 'center',
 							alignItems:'center',
 							width: {sm:'100%',md:'60%'},
-							height: {xs:'25vh',sm:'25vh', md:'100%'},
+							height: {xs:'60vh',sm:'60vh', md:'100%'},
 							// bgcolor: '#EFD886'
 						}}>
 					<Box component='img' sx={{height:{xs:150,sm:150}, my:{xs:2,sm:2,md:2}}} src={Logo} />
@@ -87,7 +87,7 @@ function Home(){
 			<Container disableGutters 
 				sx={{
 					width:'100%',
-					mt:{xs:'400px', md:'100px'}, 
+					mt:{xs:'500px', md:'100px'}, 
 					mb:{xs:'100px',md:'50x'},
 					display:'inline-flex', 
 					flexDirection:{xs:'column', sm:'column', md:'row'}, 
